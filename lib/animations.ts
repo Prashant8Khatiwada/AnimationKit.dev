@@ -13,6 +13,7 @@ export const categories = [
     'Loaders',
     'Page Transitions',
     'Modals',
+    'Interactive',
 ] as const;
 
 export type Category = (typeof categories)[number];
@@ -25,6 +26,7 @@ export interface Animation {
     description: string;
     component: string;
     code: string;
+    previewType?: 'box' | 'text' | 'button' | 'card' | 'list' | 'modal' | 'icon' | 'custom';
     props?: {
         name: string;
         type: string;
@@ -41,6 +43,7 @@ export const animations: Animation[] = [
         category: 'Entrance',
         description: 'Smoothly fades in while sliding up from below',
         component: 'FadeInUp',
+        previewType: 'box',
         code: `<FadeInUp duration={0.6}>
   <div>Your content here</div>
 </FadeInUp>`,
@@ -55,6 +58,7 @@ export const animations: Animation[] = [
         category: 'Entrance',
         description: 'Slides in from the left side',
         component: 'SlideIn',
+        previewType: 'box',
         code: `<SlideIn direction="left" duration={0.5}>
   <div>Your content here</div>
 </SlideIn>`,
@@ -69,6 +73,7 @@ export const animations: Animation[] = [
         category: 'Entrance',
         description: 'Scales up from a smaller size',
         component: 'ScaleIn',
+        previewType: 'box',
         code: `<ScaleIn duration={0.4}>
   <div>Your content here</div>
 </ScaleIn>`,
@@ -79,6 +84,7 @@ export const animations: Animation[] = [
         category: 'Entrance',
         description: 'Bounces in with elastic easing',
         component: 'BounceIn',
+        previewType: 'box',
         code: `<BounceIn>
   <div>Your content here</div>
 </BounceIn>`,
@@ -89,6 +95,7 @@ export const animations: Animation[] = [
         category: 'Exit',
         description: 'Smoothly fades out',
         component: 'FadeOut',
+        previewType: 'box',
         code: `<FadeOut duration={0.3}>
   <div>Your content here</div>
 </FadeOut>`,
@@ -99,6 +106,7 @@ export const animations: Animation[] = [
         category: 'Exit',
         description: 'Slides out to the right',
         component: 'SlideOut',
+        previewType: 'box',
         code: `<SlideOut direction="right">
   <div>Your content here</div>
 </SlideOut>`,
@@ -109,6 +117,7 @@ export const animations: Animation[] = [
         category: 'Hover',
         description: 'Lifts element on hover',
         component: 'HoverLift',
+        previewType: 'card',
         code: `<HoverLift>
   <button>Hover me</button>
 </HoverLift>`,
@@ -119,9 +128,21 @@ export const animations: Animation[] = [
         category: 'Hover',
         description: 'Scales element on hover',
         component: 'HoverScale',
+        previewType: 'card',
         code: `<HoverScale scale={1.05}>
   <div>Hover me</div>
 </HoverScale>`,
+    },
+    {
+        id: 'magnetic',
+        name: 'Magnetic',
+        category: 'Interactive',
+        description: 'Element follows cursor movement magnetically',
+        component: 'Magnetic',
+        previewType: 'button',
+        code: `<Magnetic>
+  <button>Hover Me</button>
+</Magnetic>`,
     },
     {
         id: 'pulse',
@@ -129,6 +150,7 @@ export const animations: Animation[] = [
         category: 'Loop',
         description: 'Continuous pulsing animation',
         component: 'Pulse',
+        previewType: 'box',
         code: `<Pulse>
   <div>Pulsing element</div>
 </Pulse>`,
@@ -139,6 +161,7 @@ export const animations: Animation[] = [
         category: 'Loop',
         description: 'Continuous rotation',
         component: 'Rotate',
+        previewType: 'box',
         code: `<Rotate speed={2}>
   <div>Rotating element</div>
 </Rotate>`,
@@ -149,6 +172,7 @@ export const animations: Animation[] = [
         category: 'Stagger',
         description: 'Animates children with staggered delay',
         component: 'StaggerChildren',
+        previewType: 'list',
         code: `<StaggerChildren staggerDelay={0.1}>
   <div>Child 1</div>
   <div>Child 2</div>
@@ -161,6 +185,7 @@ export const animations: Animation[] = [
         category: 'Cards',
         description: '3D card flip animation',
         component: 'CardFlip',
+        previewType: 'custom',
         code: `<CardFlip>
   <div>Front</div>
   <div>Back</div>
@@ -172,6 +197,7 @@ export const animations: Animation[] = [
         category: 'Buttons',
         description: 'Material design ripple effect',
         component: 'ButtonRipple',
+        previewType: 'button',
         code: `<ButtonRipple>
   <button>Click me</button>
 </ButtonRipple>`,
@@ -182,6 +208,7 @@ export const animations: Animation[] = [
         category: 'Loaders',
         description: 'Loading spinner animation',
         component: 'Spinner',
+        previewType: 'icon',
         code: `<Spinner size="md" color="primary" />`,
     },
     {
@@ -190,6 +217,7 @@ export const animations: Animation[] = [
         category: 'Loaders',
         description: 'Skeleton loading animation',
         component: 'Skeleton',
+        previewType: 'custom',
         code: `<Skeleton width="100%" height="20px" />`,
     },
     {
@@ -198,6 +226,7 @@ export const animations: Animation[] = [
         category: 'Page Transitions',
         description: 'Smooth page transition fade',
         component: 'PageFade',
+        previewType: 'box',
         code: `<PageFade>
   <YourPage />
 </PageFade>`,
@@ -208,6 +237,7 @@ export const animations: Animation[] = [
         category: 'Modals',
         description: 'Modal slide in from bottom',
         component: 'ModalSlide',
+        previewType: 'modal',
         code: `<ModalSlide isOpen={isOpen}>
   <div>Modal content</div>
 </ModalSlide>`,

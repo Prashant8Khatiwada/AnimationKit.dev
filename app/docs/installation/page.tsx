@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
-import { Terminal, Package, CheckCircle } from 'lucide-react';
+import { Package, CheckCircle } from 'lucide-react';
 
 const installMethods = [
     {
@@ -81,7 +81,7 @@ export default function InstallationPage() {
                     <Card className="mb-8">
                         <h2 className="text-2xl font-bold mb-4">Install Peer Dependencies</h2>
                         <p className="text-[rgb(var(--text-secondary))] mb-4">
-                            AnimationKit requires Framer Motion as a peer dependency. Install it if you haven't already:
+                            AnimationKit requires Framer Motion as a peer dependency. Install it if you haven&apos;t already:
                         </p>
                         <div className="bg-[rgb(var(--bg-secondary))] p-4 rounded-lg font-mono text-sm">
                             npm install framer-motion
@@ -96,7 +96,7 @@ export default function InstallationPage() {
                         </p>
                         <div className="bg-[rgb(var(--info))]/10 border border-[rgb(var(--info))]/20 rounded-lg p-4">
                             <p className="text-sm">
-                                <strong>💡 Tip:</strong> When using the App Router, make sure to add 'use client' directive to components that use animations.
+                                <strong>💡 Tip:</strong> When using the App Router, make sure to add &apos;use client&apos; directive to components that use animations.
                             </p>
                         </div>
                     </Card>
@@ -122,7 +122,7 @@ export default App;`}</code>
                         </pre>
                         <div className="bg-[rgb(var(--success))]/10 border border-[rgb(var(--success))]/20 rounded-lg p-4">
                             <p className="text-sm">
-                                <strong>✅ Success!</strong> If you see your content with a smooth fade-in animation, you're all set!
+                                <strong>✅ Success!</strong> If you see your content with a smooth fade-in animation, you&apos;re all set!
                             </p>
                         </div>
                     </Card>

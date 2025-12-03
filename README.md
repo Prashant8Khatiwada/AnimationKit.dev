@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AnimationKit Website
 
-## Getting Started
+The official website for AnimationKit - The lightweight React & Next.js animation library.
 
-First, run the development server:
+## 🚀 Features
+
+- **Landing Page** - Beautiful hero with animated examples
+- **Animation Showcase** - Browse 100+ animations by category
+- **Interactive Playground** - Test and customize animations in real-time
+- **Complete Documentation** - Installation, usage guides, and API reference
+- **Dark/Light Mode** - Seamless theme switching
+- **Fully Responsive** - Optimized for all devices
+- **SEO Optimized** - Meta tags, sitemap, and robots.txt
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Theme**: next-themes
+
+## 📦 Installation
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Branding
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The branding guide is located in `/public/branding/` and includes:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Logo variations (icon, wordmark)
+- Color palette (purple & cyan gradient)
+- Typography system (Inter & JetBrains Mono)
+- Motion identity guidelines
 
-## Learn More
+## 📁 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+animationkit-site/
+├── app/                    # Next.js app directory
+│   ├── animations/        # Animation showcase
+│   ├── docs/             # Documentation pages
+│   ├── playground/       # Interactive playground
+│   └── about/            # About page
+├── components/            # React components
+│   ├── layout/           # Header, Footer, Theme
+│   ├── ui/               # Button, Card, Badge
+│   └── animations/       # Animation components
+├── lib/                   # Utilities and data
+├── public/               # Static assets
+│   └── branding/         # Logo and brand assets
+└── styles/               # Global styles
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌐 Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This site is optimized for deployment on Vercel:
 
-## Deploy on Vercel
+1. Push to GitHub
+2. Import repository in Vercel
+3. Deploy automatically
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📄 License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT License - see LICENSE file for details
+
+## 🤝 Contributing
+
+Contributions are welcome! Please read the contributing guidelines in the About page.
+
+## 💬 Support
+
+- GitHub: [react-animation-kit](https://github.com/khatiwadaprashant/react-animation-kit)
+- npm: [@khatiwadaprashant/react-animation-kit](https://www.npmjs.com/package/@khatiwadaprashant/react-animation-kit)
+
+---
+
+Built with ❤️ by the AnimationKit team

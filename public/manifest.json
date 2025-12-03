@@ -1,0 +1,16 @@
+{
+  "name": "AnimationKit",
+  "short_name": "AnimationKit",
+  "description": "The lightweight React & Next.js animation library",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F172A",
+  "theme_color": "#8B5CF6",
+  "icons": [
+    {
+      "src": "/branding/logo-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

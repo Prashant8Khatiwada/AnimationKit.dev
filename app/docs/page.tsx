@@ -198,10 +198,10 @@ export default function DocsPage() {
                     transition={{ delay: 0.5, duration: 0.6 }}
                     className="mt-16"
                 >
-                    <Card className="max-w-3xl mx-auto text-center bg-gradient-to-br from-[rgb(var(--primary-purple))]/10 to-[rgb(var(--accent-cyan))]/10 border-[rgb(var(--primary-purple))]/20">
+                    <Card className="max-w-3xl mx-auto text-center bg-linear-to-br from-[rgb(var(--primary-purple))]/10 to-[rgb(var(--accent-cyan))]/10 border-[rgb(var(--primary-purple))]/20">
                         <h2 className="text-2xl font-bold mb-4">Need Help?</h2>
                         <p className="text-[rgb(var(--text-secondary))] mb-6">
-                            Can't find what you're looking for? Check out our GitHub repository or join our community.
+                            Can&apos;t find what you&apos;re looking for? Check out our GitHub repository or join our community.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a

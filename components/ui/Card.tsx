@@ -12,11 +12,11 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
         const baseStyles = 'rounded-xl p-6 transition-all duration-300';
 
         const variants = {
-            default: 'bg-[rgb(var(--bg-elevated))] border border-[rgb(var(--border-color))] shadow-md',
-            glass: 'bg-white/10 backdrop-blur-lg border border-white/20',
+            default: 'bg-background border border-border shadow-sm',
+            glass: 'bg-background/50 backdrop-blur-lg border border-border/50',
         };
 
-        const hoverStyles = hover ? 'hover:shadow-xl hover:-translate-y-1' : '';
+        const hoverStyles = hover ? 'hover:shadow-lg hover:-translate-y-1 hover:border-primary/30' : '';
 
         return (
             <div

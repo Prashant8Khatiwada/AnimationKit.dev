@@ -2,9 +2,11 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { Menu, X, Github, Package } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
+import { clsx } from 'clsx';
 
 const navigation = [
     { name: 'Docs', href: '/docs' },
@@ -15,6 +17,7 @@ const navigation = [
 
 export function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const pathname = usePathname();
 
     return (
         <header className="sticky top-0 z-50 w-full border-b border-[rgb(var(--border-color))] bg-[rgb(var(--bg-primary))]/80 backdrop-blur-lg">
@@ -35,15 +38,26 @@ export function Header() {
 
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center space-x-8">
-                    {navigation.map((item) => (
-                        <Link
-                            key={item.name}
-                            href={item.href}
-                            className="text-[rgb(var(--text-secondary))] hover:text-[rgb(var(--text-primary))] transition-colors font-medium"
-                        >
-                            {item.name}
-                        </Link>
-                    ))}
+                    {navigation.map((item) => {
+                        const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
+                        return (
+                            <Link
+                                key={item.name}
+                                href={item.href}
+                                className={clsx(
+                                    "transition-colors font-medium text-sm",
+                                    isActive
+                                        ? "text-[rgb(var(--text-primary))] font-semibold"
+                                        : "text-[rgb(var(--text-secondary))] hover:text-[rgb(var(--text-primary))]"
+                                )}
+                            >
+                                {item.name}
+                                {isActive && (
+                                    <span className="block h-0.5 w-full bg-primary mt-0.5 rounded-full" />
+                                )}
+                            </Link>
+                        );
+                    })}
                 </div>
 
                 {/* Right Side Actions */}
@@ -92,16 +106,24 @@ export function Header() {
             {mobileMenuOpen && (
                 <div className="md:hidden border-t border-[rgb(var(--border-color))] bg-[rgb(var(--bg-primary))]">
                     <div className="container-custom py-4 space-y-2">
-                        {navigation.map((item) => (
-                            <Link
-                                key={item.name}
-                                href={item.href}
-                                className="block px-4 py-2 rounded-lg text-[rgb(var(--text-secondary))] hover:text-[rgb(var(--text-primary))] hover:bg-[rgb(var(--bg-secondary))] transition-colors"
-                                onClick={() => setMobileMenuOpen(false)}
-                            >
-                                {item.name}
-                            </Link>
-                        ))}
+                        {navigation.map((item) => {
+                            const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
+                            return (
+                                <Link
+                                    key={item.name}
+                                    href={item.href}
+                                    className={clsx(
+                                        "block px-4 py-2 rounded-lg transition-colors",
+                                        isActive
+                                            ? "bg-[rgb(var(--bg-secondary))] text-[rgb(var(--text-primary))] font-semibold"
+                                            : "text-[rgb(var(--text-secondary))] hover:text-[rgb(var(--text-primary))] hover:bg-[rgb(var(--bg-secondary))]"
+                                    )}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                >
+                                    {item.name}
+                                </Link>
+                            );
+                        })}
                     </div>
                 </div>
             )}
